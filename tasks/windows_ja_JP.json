@@ -1,0 +1,34 @@
+{
+  "description": "Windows向けpuppet-agentノードのブートストラップ",
+  "input_method": "powershell",
+  "parameters": {
+    "master": {
+      "description": "puppet-agentをブートストラップするmasterのFQDN",
+      "type": "文字列"
+    },
+    "cacert_content": {
+      "description": "想定されるmaster CA証明書の内容",
+      "type": "オプション[文字列]"
+    },
+    "certname": {
+      "description": "ノードをブートストラップするcertname",
+      "type": "オプション[文字列]"
+    },
+    "environment": {
+      "description": "ノードをブートストラップするenvironment",
+      "type": "オプション[文字列]"
+    },
+    "dns_alt_names": {
+      "description": "agent証明書の生成に使用するDNSの別名",
+      "type": "オプション[文字列]"
+    },
+    "custom_attribute": {
+      "description": "この設定はpuppet.confに追加され、csr_attributes.yamlのcustom_attributesセクションに含まれます",
+      "type": "オプション[配列[パターン[/\\w+=\\w+/]]]"
+    },
+    "extension_request": {
+      "description": "この設定はpuppet.confに追加され、csr_attributes.yamlのextension_requestsセクションに含まれます",
+      "type": "オプション[配列[パターン[/\\w+=\\w+/]]]"
+    }
+  }
+}
